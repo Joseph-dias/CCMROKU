@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="LiveScene" extends="Scene">
+<script type="text/brightscript" uri="LiveScene.brs" />
+
+<children>
+    <!-- This label will inform the user that we are not currently streaming -->
+    <Label id="infoTXT" text="Not Currently Streaming" height="720" width="1280" horizalign="center" vertAlign="center" visible="false" font="font:LargeBoldSystemFont" />
+    <Video id="VideoPlayer">
+        
+    </Video>
+</children>
+
+</component>

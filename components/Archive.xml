@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="Archive" extends="Scene">
+<script type="text/brightscript" uri="Archive.brs" />
+
+<children>
+    <!-- Tell the user that we are working on retrieving the data -->
+    <Label id="infoLBL" height="720" width="1200" text="Retrieving Data..." horizAlign="center" vertAlign="center" font="font:LargeBoldSystemFont" />
+    <!-- This is the grid to show once the data has been retrieved from the API -->
+    <MarkupGrid id="data" translation="[50,50]" visible="false" itemComponentName="gridItem" itemSize="[400,400]" itemSpacing="[ 4, 8 ]" numColumns="3" numRows="6" />
+</children>
+
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="HomeScene" extends="Scene">
+<script type="text/brightscript" uri="HomeScene.brs" />
+
+<children>
+<!-- CCM Overhang -->
+<Overhang title="Calvary Chapel Melbourne" logoBaselineOffset="15.0" logouri="pkg:/images/CCM logo-top.png" color="0x808080" titleColor="0x191970" clockColor="0x191970" />
+</children>
+
+</component>

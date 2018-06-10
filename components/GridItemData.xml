@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="GridItemData" extends="ContentNode">
+<interface>
+    <field id="picURL" type="string" />
+    <field id="title" type="string" />
+    <field id="seriesID" type="int" />
+</interface>
+
+</component>

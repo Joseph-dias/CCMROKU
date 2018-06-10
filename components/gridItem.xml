@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="gridItem" extends="Group">
+<interface>
+    <field id="itemContent" type="node" onChange="itemContentChanged" />
+</interface>
+<script type="text/brightscript" uri="gridItem.brs" />
+
+<children>
+    <LayoutGroup itemSpacings="10" vertAlignment="top" layoutDirection="vert">
+        <!-- This is the picture to show above the title -->
+        <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" width="400" height="300" />
+        <LayoutGroup itemSpacings="0" layoutDirection="horiz" horizAlignment="center">
+            <!-- This label will display the title -->
+            <Label id="infoLBL" text="Text Goes Here" width="400" height="100" font="font:SmallSystemFont" />
+        </LayoutGroup>
+    </LayoutGroup>
+</children>
+
+</component>

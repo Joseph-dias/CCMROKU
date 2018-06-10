@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="buttonPanel" extends="ListPanel">
+
+<script type="text/brightscript" uri="buttonPanel.brs" />
+
+
+<children>
+    <LabelList id="ButtonList" itemSize="[400,50]">
+        <ContentNode id="Buttons" role="content">
+            <!--The two button nodes -->
+            <ContentNode id="LiveBTN" title="Live Service" />
+            <ContentNode id="aBTN" title="Archive" />
+        </ContentNode>
+    </LabelList>
+</children>
+
+</component>
