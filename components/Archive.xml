@@ -2,6 +2,10 @@
 
 <component name="Archive" extends="Scene">
 <script type="text/brightscript" uri="Archive.brs" />
+<interface>
+<field id="ClientID" type="string" />
+<field id="ClientSecret" type="string" />
+</interface>
 
 <children>
     <!-- Tell the user that we are working on retrieving the data -->

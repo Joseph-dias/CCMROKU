@@ -4,7 +4,15 @@ sub init()
     m.newCall = CreateObject("roSGNode", "APICall")  'Create an object to call the API
     m.info = m.top.findNode("infoLBL")
     m.data = m.top.findNode("data")
+
+    'API authentication data
+    m.top.ClientID = "ccmRestTools"
+    m.top.ClientSecret = "qwertyAlphaBetaTheta2016!"
+    'End API authentication data
+
     m.newCall.ObserveField("returnedobject", "APIReturn")
+    m.newCall.ClientID = m.top.ClientID
+    m.newCall.ClientSecret = m.top.ClientSecret
     m.newCall.control = "RUN"
 end sub
 

@@ -4,6 +4,20 @@ end sub
 
 'Call the API to get the series list, and create a GridItemData node for each
 function CallAPI() as void
+    'Get token from server
+    tokenRequest = CreateObject("roUrlTransfer")
+    tokenRequest.SetRequest("POST")
+    tokenRequest.SetUrl("https://my.calvaryccm.com/token")
+    tokenRequest.SetCertificatesFile("pkg:/source/ca-bundle.crt")
+    tokenRequest.InitClientCertificates()
+    'tokenRequest.AddHeader("Accept", "application/json")
+    tokenRequest.AddHeader("Content-Type","application/json")
+    'tokenRequest.AddHeader("grant_type=", "client_credentials")
+    'tokenRequest.AddHeader("client_id=", Escape(m.top.ClientID))
+    'tokenRequest.AddHeader("client_secret=", Escape(m.top.ClientSecret))
+    params = "grant_type=client_credentials&client_id=" + m.top.ClientID + "&client_secret=" + m.top.ClientSecret + "&scope=all"
+    credResponse = tokenRequest.PostFromString(params)
+    'Request data from api
     request = CreateObject("roUrlTransfer")
     request.SetUrl("https://my.calvaryccm.com/ministryplatformapi/tables/Media_Archive_Series?%24filter=Display_On_Roku%3D'true'")
     request.SetRequest("GET")
@@ -11,7 +25,7 @@ function CallAPI() as void
     request.InitClientCertificates()
     request.AddHeader("Accept", "application/json")
     'TODO: Find out how to correctly authorize into the API
-    request.AddHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlROaEFCQnRxaURCZnJoM2F1OElDQmZIXzN6TSIsImtpZCI6IlROaEFCQnRxaURCZnJoM2F1OElDQmZIXzN6TSJ9.eyJpc3MiOiJGb3JtcyIsImF1ZCI6IkZvcm1zL3Jlc291cmNlcyIsImV4cCI6MTUyODQ3NzA4NCwibmJmIjoxNTI4NDczNDg0LCJjbGllbnRfaWQiOiJQbGF0Zm9ybS5XZWIuU2VydmljZXMiLCJzY29wZSI6Imh0dHA6Ly93d3cudGhpbmttaW5pc3RyeS5jb20vZGF0YXBsYXRmb3JtL3Njb3Blcy9hbGwiLCJzdWIiOiJiOTZlMmM1Mi0yMjY2LTRmOWUtYTIzZS01OWFiZDk4OTJlNGUiLCJhdXRoX3RpbWUiOjE1Mjg0NzM0ODQsImlkcCI6Imlkc3J2IiwibmFtZSI6InN0YXNoNTAwMCIsImFtciI6WyJwYXNzd29yZCJdfQ.uI5TysqIOwc-rulkCqinkXdmMTr6tW4rDaMoO-tb45Hdfi29mPY2uXEY4gR6otxbavPCDFuk2djjQj-aJT1GE5BFFik7G-Efuc-AZ7D3zVslqrbMmRLPYsVjq0D6EYaTsApKV3Xgp_eLwoo8_0nNEcRI_NehX_QPjZg50q_Tbq1cjiDIfn5vZFyWeepazTKPHMcRMgOcBgE1IBXgLKJHBS3TqQawP18bb6-ygVFZPsIoKznZfqjnr4b7r0sB-gxhu7ZlNi9HTg3qol9kFrPZaRiUAFh5_68caf_YY2Wx_qXCuKkMb4F3uvhZGc3MnFzxEwrC1DundigWF4D6wvniUA")
+    request.AddHeader("Authorization", "OAuth " + m.top.ClientID + " " + m.top.ClientSecret)
     print "Sending the request to the API"
     returned = request.GetToString()
     if returned <> "" then
