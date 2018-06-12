@@ -7,16 +7,16 @@ function CallAPI() as void
     'Get token from server
     tokenRequest = CreateObject("roUrlTransfer")
     tokenRequest.SetRequest("POST")
-    tokenRequest.SetUrl("https://my.calvaryccm.com/token")
+    params = "grant_type=client_credentials&client_id=" + m.top.ClientID + "&client_secret=" + m.top.ClientSecret
+    tokenRequest.SetUrl("https://my.calvaryccm.com/ministryplatformapi/oauth/token")
     tokenRequest.SetCertificatesFile("pkg:/source/ca-bundle.crt")
     tokenRequest.InitClientCertificates()
     'tokenRequest.AddHeader("Accept", "application/json")
-    tokenRequest.AddHeader("Content-Type","application/json")
-    'tokenRequest.AddHeader("grant_type=", "client_credentials")
-    'tokenRequest.AddHeader("client_id=", Escape(m.top.ClientID))
-    'tokenRequest.AddHeader("client_secret=", Escape(m.top.ClientSecret))
-    params = "grant_type=client_credentials&client_id=" + m.top.ClientID + "&client_secret=" + m.top.ClientSecret + "&scope=all"
-    credResponse = tokenRequest.PostFromString(params)
+    tokenRequest.AddHeader("Accept","application/json")
+    tokenRequest.AddHeader("grant_type", "client_credentials")
+    tokenRequest.AddHeader("client_id", m.top.ClientID)
+    tokenRequest.AddHeader("client_secret", m.top.ClientSecret)
+    credResponse = tokenRequest.PostFromString()
     'Request data from api
     request = CreateObject("roUrlTransfer")
     request.SetUrl("https://my.calvaryccm.com/ministryplatformapi/tables/Media_Archive_Series?%24filter=Display_On_Roku%3D'true'")
