@@ -2,8 +2,7 @@
 
 <component name="APICall" extends="Task">
 <interface>
-    <field id="ClientID" type="string" />
-    <field id="ClientSecret" type="string" />
+    <field id="token" type="string" />
     <field id="returnedobject" type="node" />
 </interface>
 <script type="text/brightscript" uri="APICall.brs" />

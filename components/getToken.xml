@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="getToken" extends="Task">
+<script type="text/brightscript" uri="getToken.brs" />
+<interface>
+    <field id="token" type="string" />
+</interface>
+</component>
