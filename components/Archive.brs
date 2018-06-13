@@ -11,6 +11,7 @@ sub getDataFromAPI()
     m.info = m.top.findNode("infoLBL")
     m.data = m.top.findNode("data")
     m.newCall.token = m.tokenNode.token 'Set the token value in the APICall node
+    m.tokenNode.unObserveField("token")
     m.newCall.ObserveField("returnedobject", "APIReturn")
     m.newCall.control = "RUN"
 end sub
@@ -29,11 +30,10 @@ function onKeyEvent(key as string, press as Boolean) as Boolean
     if press then
         if key = "OK" 'The user selected a button
             print "The user pressed OK"
-            buttonPressed = m.data.content.getChild(m.data.itemFocused).seriesID 'Get the series id that was selected
-            m.nextScreen = CreateObject("roSGNode", "vidList")
-            m.nextScreen.seriesID = buttonPressed
-            m.nextScreen.picURL = m.data.content.getChild(m.data.itemFocused).picURL
-            m.nextScreen.control = "RUN"
+            m.buttonPressed = m.data.content.getChild(m.data.itemFocused).seriesID 'Get the series id that was selected
+            m.tokenNode.token = ""
+            m.tokenNode.ObserveField("token", "newToken")
+            m.tokenNode.control = "RUN"
         else if key = "back"
             print "The user pressed back"
             return false
@@ -41,3 +41,12 @@ function onKeyEvent(key as string, press as Boolean) as Boolean
     end if
     return true
 end function
+
+sub newToken()
+    m.nextScreen = CreateObject("roSGNode", "vidList")
+    m.nextScreen.token = m.tokenNode.token
+    m.nextScreen.seriesID = m.buttonPressed
+    m.nextScreen.picURL = m.data.content.getChild(m.data.itemFocused).picURL
+    m.tokenNode.unObserveField("token")
+    m.nextScreen.control = "RUN"
+end sub

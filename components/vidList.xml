@@ -2,6 +2,7 @@
 
 <component name="vidList" extends="Task">
 <interface>
+    <field id="token" type="string" />
     <field id="seriesID" type="int" />
     <field id="picURL" type="string" />
 </interface>
