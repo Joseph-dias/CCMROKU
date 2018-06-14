@@ -7,7 +7,7 @@ sub showList()
     screen2 = CreateObject("roSGScreen") 'Create the screen object
     m.port2 = CreateObject("roMessagePort")
     screen2.setMessagePort(m.port2)
-    scene2 = screen2.CreateScene("selectedSeries") 'Create the Live Scene
+    scene2 = screen2.CreateScene("selectedSeries") 'Create the Series Page
     screen2.show() 'Show the screen
     data = getList()
     if data <> invalid then
@@ -43,7 +43,6 @@ function getList() as object
     request.SetCertificatesFile("pkg:/source/ca-bundle.crt")
     request.InitClientCertificates()
     request.AddHeader("Accept", "application/json")
-    'TODO: Find out how to correctly authorize into the API
     request.AddHeader("Authorization", "Bearer " + m.top.token)
     print "Sending the request to the API"
     returned = request.GetToString()
