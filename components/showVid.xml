@@ -2,9 +2,8 @@
 
 <component name="showVid" extends="Task">
 <interface>
-    <field id="archiveID" type="int" />
+    <field id="messageNum" type="string" />
     <field id="vid_name" type="string" />
-    <field id="date" type="string" />
 </interface>
 <script type="text/brightscript" uri="showVid.brs" />
 </component>

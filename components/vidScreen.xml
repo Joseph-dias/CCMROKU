@@ -3,7 +3,7 @@
 <component name="vidScreen" extends="Scene">
 <script type="text/brightscript" uri="vidScreen.brs" />
 <interface>
-    <field id="url" type="string" />
+    <field id="message" type="string" />
     <field id="Title" type="string" />
 </interface>
 

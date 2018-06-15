@@ -14,12 +14,11 @@ sub showList()
         toReturn = CreateObject("roSGNode", "ContentNode") 'Parent Node to return
         while data.Count() > 0
             myData = data.pop()
-            newNode = toReturn.CreateChild("MessageData") 'Create a GridItemData child node
+            newNode = toReturn.CreateChild("MessageData") 'Create a MessageData child node
             newNode.title = myData.Title 'Set child node's data
             newNode.Description = myData.Description
-            newNode.ArchiveID = myData.Media_Archive_Archive_ID
-            newNode.dateString = setDateString(myData.MessageDate)
-            newNode.pic = m.top.picURL
+            newNode.MessageNum = myData.Message_Number
+            newNode.pic = m.top.picURL 'Ultimately set in Archive.brs
         end while
 
         scene2.vidObject = toReturn

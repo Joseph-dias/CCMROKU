@@ -22,6 +22,7 @@ function setVideo() as object
     service = CreateObject("roSGNode", "ContentNode")
     service.url = "https://wowzaprod150-i.akamaihd.net/hls/live/587494/8216d2a0/playlist.m3u8"
     service.Title = "Live Service"
+    service.live = True
     service.streamformat = "hls"
     return service
 end function

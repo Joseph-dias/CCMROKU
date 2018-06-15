@@ -5,8 +5,7 @@
     <field id="pic" type="string" />
     <field id="title" type="string" />
     <field id="description" type="string" />
-    <field id="dateString" type="String" />
-    <field id="archiveID" type="int" />
+    <field id="messageNum" type="string" />
 </interface>
 
 </component>
