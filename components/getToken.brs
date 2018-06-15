@@ -1,3 +1,8 @@
+'getToken
+'Calls the authentication server to obtain a token.
+'Set the Client ID and the Client Secret in setClientData()
+
+
 sub init()
     m.top.functionName = "getTheToken"
 end sub

@@ -1,3 +1,6 @@
+'HomeScene
+'This is the first scene that the user comes to
+
 sub init()
     print "Initializing HomeScene"
     m.top.setFocus(true)

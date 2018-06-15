@@ -1,5 +1,5 @@
 '   showVid
-'   Creates the video scene, sets the video URL and title in the scene, and shows the scene
+'   Creates the video scene, sets the video id and title in the scene, and shows the scene
 
 
 sub init()
@@ -12,8 +12,10 @@ sub showVideo()
     m.port2 = CreateObject("roMessagePort")
     screen2.setMessagePort(m.port2)
     scene2 = screen2.CreateScene("vidScreen") 'Create the Video Scene
-    scene2.Title = m.top.vid_name
-    scene2.message = m.top.messageNum
+    myContent = CreateObject("roSGNode", "ContentNode")
+    myContent.title = m.top.vid_name
+    myContent.id = m.top.messageNum
+    scene2.itemContent = myContent
     screen2.show() 'Show the screen
 
     while(true)

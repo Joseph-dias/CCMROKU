@@ -1,3 +1,6 @@
+'showLive
+'This is a task that shows the LiveScene
+
 sub init()
     m.top.functionName = "showLiveScreen"
 end sub

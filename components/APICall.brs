@@ -1,3 +1,6 @@
+'APICall
+'Calls the API to get the series list
+
 sub init()
     m.top.functionName = "CallAPI"
 end sub

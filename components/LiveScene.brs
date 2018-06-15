@@ -1,3 +1,6 @@
+'LiveScene
+'This scene displays the live service to the user.
+
 sub init()
     print "Initializing LiveScene"
     m.vid = m.top.findNode("VideoPlayer") 'Get the video node

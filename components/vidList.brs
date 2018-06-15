@@ -1,3 +1,8 @@
+'vidList
+'This is a task that creates a selectedSeries scene,
+'calls the API to get the list of videos in a series,
+'and sets that series list in the scene.
+
 sub init()
     m.top.functionName = "showList"
 end sub
@@ -50,34 +55,3 @@ function getList() as object
     end if
     return invalid
 end function
-
-function setDateString(theDate) as string
-    toReturn = theDate.Split("T")
-    return strReplace(toReturn[0], "-", "")
-end function
-
-'******************************************************
-'Replace substrings in a string. Return new string
-'******************************************************
-Function strReplace(basestr As String, oldsub As String, newsub As String) As String
-    newstr = ""
-
-    i = 1
-    while i <= Len(basestr)
-        x = Instr(i, basestr, oldsub)
-        if x = 0 then
-            newstr = newstr + Mid(basestr, i)
-            exit while
-        endif
-
-        if x > i then
-            newstr = newstr + Mid(basestr, i, x-i)
-            i = x
-        endif
-
-        newstr = newstr + newsub
-        i = i + Len(oldsub)
-    end while
-
-    return newstr
-End Function

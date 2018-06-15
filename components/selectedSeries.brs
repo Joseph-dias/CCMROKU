@@ -1,3 +1,7 @@
+'selectedSeries
+'This is a scene that creates and displays a list of videos in a series.
+'Giving the user the option to select one.
+
 sub init()
     print "Show the series List"
     m.top.setFocus(true)

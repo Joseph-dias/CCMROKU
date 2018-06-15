@@ -3,14 +3,10 @@
 <component name="vidScreen" extends="Scene">
 <script type="text/brightscript" uri="vidScreen.brs" />
 <interface>
-    <field id="message" type="string" />
-    <field id="Title" type="string" />
+    <field id="itemContent" type="node" onChange="itemContentChanged" />
 </interface>
 
 <children>
-    <Video id="VideoPlayer">
-        
-    </Video>
 </children>
 
 </component>

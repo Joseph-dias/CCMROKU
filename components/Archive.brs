@@ -1,3 +1,6 @@
+'Archive
+'This scene displays the series selection list to the user
+
 sub init()
     print "Show the series List"
     m.top.setFocus(true)

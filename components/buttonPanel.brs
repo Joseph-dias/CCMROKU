@@ -1,3 +1,6 @@
+'buttonPanel
+'This panel holds a couple of buttons on the left side of the homescene
+
 sub init()
     print "Initializing the Button Panel"
     m.top.panelSize = "medium" 'Setting this panel up
