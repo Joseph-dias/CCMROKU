@@ -9,8 +9,8 @@ end sub
 
 sub setClientData()
     'API authentication data
-    m.ClientID = "ccmRestTools"
-    m.ClientSecret = "qwertyAlphaBetaTheta2016!"
+    m.ClientID = "[Client ID]"
+    m.ClientSecret = "[Client Secret]"
     'End API authentication data
 end sub
 
