@@ -16,8 +16,6 @@ sub itemContentChanged()
     videoContent.streamformat = "hls"
     'Creating the video node and setting the content
     m.vid = m.top.CreateChild("Video")
-    m.vid.width = "1280"
-    m.vid.height = "720"
     m.vid.content = videoContent
     m.vid.setfocus(true)
     m.vid.control = "play"
