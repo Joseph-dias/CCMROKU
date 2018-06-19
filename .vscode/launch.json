@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "BrightScript Debug: Launch",
             "stopOnEntry": true,
-            "host": "192.168.1.101",
+            "host": "192.168.1.139",
             "password": "homer",
             "rootDir": "${workspaceFolder}",
             "consoleOutput": "normal"

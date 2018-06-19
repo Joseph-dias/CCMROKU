@@ -12,8 +12,8 @@ sub itemContentChanged()
     'Creating video content
     videoContent = CreateObject("roSGNode", "ContentNode")
     videoContent.title = m.top.itemContent.title
-    videoContent.url = "http://video.calvaryccm.com:1935/vod/_definst_/main/mp4/" + m.top.itemContent.id + "/playlist.m3u8"
-    videoContent.streamformat = "hls"
+    videoContent.url = "http://video.calvaryccm.com/main/mp4/" + m.top.itemContent.id + ".mp4"
+    videoContent.streamformat = "mp4"
     'Creating the video node and setting the content
     m.vid = m.top.CreateChild("Video")
     m.vid.content = videoContent
