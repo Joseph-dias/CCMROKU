@@ -9,8 +9,8 @@ end sub
 
 sub setClientData()
     'API authentication data
-    m.ClientID = "[Client ID]"
-    m.ClientSecret = "[Client Secret]"
+    m.ClientID = "[Client ID Here]"
+    m.ClientSecret = "[Client Secret Here]"
     'End API authentication data
 end sub
 
