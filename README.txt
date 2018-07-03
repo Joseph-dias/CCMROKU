@@ -22,7 +22,7 @@ the other button takes the user to the archive.
 DESCPANEL 
 ---------
 
-This panel holds a label inside of a rectangle (on the left side of the homescene).
+This panel holds a label inside of a rectangle (on the right side of the homescene).
 The text is dynamically changed from the HomeScene.  It can be changed there by the developer.
 
 
