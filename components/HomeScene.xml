@@ -4,8 +4,16 @@
 <script type="text/brightscript" uri="HomeScene.brs" />
 
 <children>
-<!-- CCM Overhang -->
-<Overhang title="Calvary Chapel Melbourne" logoBaselineOffset="15.0" logouri="pkg:/images/CCM logo-top.png" color="0x808080" titleColor="0x191970" clockColor="0x191970" />
+    <!-- CCM Overhang -->
+    <Overhang title="Calvary Chapel Melbourne" color="0x808080" titleColor="0x191970" clockColor="0x191970" />
+        <!-- Button List -->
+        <LabelList id="ButtonList" itemSize="[600,100]" translation="[350,280]" textHorizAlign="center" font="font:MediumSystemFont" focusedFont="font:LargeBoldSystemFont">
+                <ContentNode id="Buttons" role="content">
+                    <!--The two button nodes -->
+                        <ContentNode id="LiveBTN" title="Live Service" />
+                        <ContentNode id="aBTN" title="Archive" />
+                </ContentNode>
+        </LabelList>
 </children>
 
 </component>

@@ -9,21 +9,8 @@ HOMESCENE
 ---------
 
 This is the first scene that the user comes to when they open this app.
-It defines the overhang, and it holds a couple of panels.  The buttonPanel and the DescPanel.
-
-
-BUTTONPANEL 
------------
-
-This panel holds two buttons on the left side of the homescene.  One of the buttons takes the user to the LiveScene,
-the other button takes the user to the archive.
-
-
-DESCPANEL 
----------
-
-This panel holds a label inside of a rectangle (on the right side of the homescene).
-The text is dynamically changed from the HomeScene.  It can be changed there by the developer.
+It defines the overhang, and a list of buttons.
+The buttons take the user to the Live Service and the Archive
 
 
 SHOWLIVE
