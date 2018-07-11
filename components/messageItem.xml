@@ -13,7 +13,7 @@
             <Label id="infoLBL" text="Text Goes Here" width="400" height="100" font="font:SmallSystemFont" wrap="true" />
         </LayoutGroup>
         <!-- This is the picture to show above the title -->
-        <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" width="400" height="300" />
+        <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" width="400" height="300" loadDisplayMode="scaleToFit" />
         <Label id="descLBL" text="Text Goes Here" width="400" height="200" font="font:SmallSystemFont" wrap="true" />
     </LayoutGroup>
 </children>
