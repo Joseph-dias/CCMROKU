@@ -9,6 +9,7 @@ sub init()
     m.data = m.top.findNode("data")
     m.top.ObserveField("vidObject", "changeInfo")
     m.top.ObserveField("empty", "displayMSG")
+    m.lastFocus = -1
 end sub
 
 sub changeInfo()
@@ -16,7 +17,18 @@ sub changeInfo()
     m.data.content = m.top.vidObject
     m.info.visible = false
     m.data.visible = true
+    m.data.ObserveField("rowItemFocused", "onNewFocus")
     m.data.setFocus(true)
+end sub
+
+'Set the width of the new focused item.  Reset the width of the old one
+sub onNewFocus()
+    print "Focused at: " + Str(m.data.rowItemFocused[1])
+    if m.lastFocus <> -1
+        m.data.content.getChild(0).getChild(m.lastFocus).NewWidth = 200
+    end if
+    m.data.content.getChild(0).getChild(m.data.rowItemFocused[1]).NewWidth = 400
+    m.lastFocus = m.data.rowItemFocused[1]
 end sub
 
 'Deal with selection

@@ -3,6 +3,10 @@
 <component name="messageItem" extends="Group">
 <interface>
     <field id="itemContent" type="node" onChange="itemContentChanged" />
+    <field id="NewWidth" type="float" onChange="switchSize" />
+    <field id="SDItemWidth" type="float" />
+    <field id="HDItemWidth" type="float" />
+    <field id="FHDItemWidth" type="float" />
 </interface>
 <script type="text/brightscript" uri="messageItem.brs" />
 
@@ -10,11 +14,11 @@
     <LayoutGroup itemSpacings="10" vertAlignment="top" layoutDirection="vert">
         <LayoutGroup itemSpacings="0" layoutDirection="horiz" horizAlignment="center">
             <!-- This label will display the title -->
-            <Label id="infoLBL" text="Text Goes Here" width="400" height="100" font="font:SmallSystemFont" wrap="true" />
+            <Label id="infoLBL" text="Text Goes Here" width="200" height="50" font="font:SmallSystemFont" wrap="true" />
         </LayoutGroup>
         <!-- This is the picture to show above the title -->
-        <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" width="400" height="300" loadDisplayMode="scaleToFit" />
-        <Label id="descLBL" text="Text Goes Here" width="400" height="200" font="font:SmallSystemFont" wrap="true" />
+        <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" width="200" height="100" loadDisplayMode="scaleToFit" />
+        <Label id="descLBL" text="Text Goes Here" width="200" height="50" font="font:SmallSystemFont" wrap="true" />
     </LayoutGroup>
 </children>
 
