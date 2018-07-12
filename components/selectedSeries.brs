@@ -8,6 +8,7 @@ sub init()
     m.info = m.top.findNode("infoLBL")
     m.data = m.top.findNode("data")
     m.top.ObserveField("vidObject", "changeInfo")
+    m.top.ObserveField("empty", "displayMSG")
 end sub
 
 sub changeInfo()
@@ -35,3 +36,11 @@ function onKeyEvent(key as string, press as Boolean) as Boolean
     end if
     return true
 end function
+
+sub displayMSG()
+    if m.top.empty = "true"
+        m.info.visible = false
+        m.data.visible = false
+        m.top.findNode("emptyLBL").visible = true
+    end if
+end sub

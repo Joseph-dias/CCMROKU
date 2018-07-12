@@ -18,16 +18,21 @@ sub showList()
     if data <> invalid then
         toReturn = CreateObject("roSGNode", "ContentNode") 'Parent Node to return
         row1 = toReturn.CreateChild("ContentNode")
-        while data.Count() > 0
-            myData = data.pop()
-            newNode = row1.CreateChild("MessageData") 'Create a MessageData child node
-            newNode.title = myData.Title 'Set child node's data
-            newNode.Description = myData.Description
-            newNode.MessageNum = myData.Message_Number
-            newNode.pic = m.top.picURL 'Ultimately set in Archive.brs
-        end while
-
-        scene2.vidObject = toReturn
+        if data.Count() = 0
+            scene2.empty = "true"
+        else
+            while data.Count() > 0
+                myData = data.pop()
+                newNode = row1.CreateChild("MessageData") 'Create a MessageData child node
+                newNode.title = myData.Title 'Set child node's data
+                newNode.Description = myData.Description
+                newNode.MessageNum = myData.Message_Number
+                newNode.pic = m.top.picURL 'Ultimately set in Archive.brs
+            end while
+            scene2.vidObject = toReturn
+        end if
+    else
+        scene2.empty = "true"
     end if
 
     while(true)
