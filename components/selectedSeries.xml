@@ -12,7 +12,7 @@
     <!-- Tell the user that we are working on retrieving the data -->
     <Label id="infoLBL" height="720" width="1200" text="Retrieving Data..." horizAlign="center" vertAlign="center" font="font:LargeBoldSystemFont" />
     <!-- This is the grid to show once the data has been retrieved from the API -->
-    <MarkupGrid id="data" translation="[25,30]" visible="false" itemComponentName="messageItem" itemSize="[400,600]" itemSpacing="[ 15, 20 ]" numColumns="3" numRows="6" />
+    <RowList id="data" translation="[100,100]" visible="false" itemComponentName="messageItem" rowItemSpacing="[[15, 0]]" rowItemSize="[[400,400]]" itemSize="[1280, 720]" numRows="1" rowHeights="200" rowFocusAnimationStyle="fixedFocusWrap" />
 </children>
 
 </component>

@@ -17,9 +17,10 @@ sub showList()
     data = getList()
     if data <> invalid then
         toReturn = CreateObject("roSGNode", "ContentNode") 'Parent Node to return
+        row1 = toReturn.CreateChild("ContentNode")
         while data.Count() > 0
             myData = data.pop()
-            newNode = toReturn.CreateChild("MessageData") 'Create a MessageData child node
+            newNode = row1.CreateChild("MessageData") 'Create a MessageData child node
             newNode.title = myData.Title 'Set child node's data
             newNode.Description = myData.Description
             newNode.MessageNum = myData.Message_Number
@@ -38,6 +39,7 @@ sub showList()
     end while
 end sub
 
+'Gets objects from the API
 function getList() as object
     request = CreateObject("roUrlTransfer")
     print "Printing " + m.top.seriesID.ToStr()
