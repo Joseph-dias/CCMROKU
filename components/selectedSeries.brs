@@ -37,20 +37,18 @@ end sub
 
 'Deal with selection
 function onKeyEvent(key as string, press as Boolean) as Boolean
-    if press then
-        if key = "OK" 'The user selected a button
-            print "The user pressed OK"
-            buttonPressed = m.data.content.getChild(m.data.itemFocused).messageNum 'Get the message number that was selected (Located in the messageItem node)
-            m.nextScreen = CreateObject("roSGNode", "showVid")
-            m.nextScreen.messageNum = buttonPressed
-            m.nextScreen.vid_name = m.data.content.getChild(m.data.itemFocused).title
-            m.nextScreen.control = "RUN"
-        else if key = "back"
-            print "The user pressed back"
-            return false
-        end if
+    if key = "OK" 'The user selected a button
+        print "The user pressed OK"
+        buttonPressed = m.data.content.getChild(0).getChild(m.data.rowItemFocused[1]).messageNum 'Get the message number that was selected (Located in the messageItem node)
+        m.nextScreen = CreateObject("roSGNode", "showVid")
+        m.nextScreen.messageNum = buttonPressed
+        m.nextScreen.vid_name = m.data.content.getChild(0).getChild(m.data.rowItemFocused[1]).title
+        m.nextScreen.control = "RUN"
+        return true
+    else if key = "back"
+        print "The user pressed back"
     end if
-    return true
+    return false
 end function
 
 sub displayMSG()
