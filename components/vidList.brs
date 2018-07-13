@@ -17,16 +17,26 @@ sub showList()
     data = getList()
     if data <> invalid then
         toReturn = CreateObject("roSGNode", "ContentNode") 'Parent Node to return
-        while data.Count() > 0
-            myData = data.pop()
-            newNode = toReturn.CreateChild("MessageData") 'Create a MessageData child node
-            newNode.title = myData.Title 'Set child node's data
-            newNode.Description = myData.Description
-            newNode.MessageNum = myData.Message_Number
-            newNode.pic = m.top.picURL 'Ultimately set in Archive.brs
-        end while
-
-        scene2.vidObject = toReturn
+        row1 = toReturn.CreateChild("ContentNode")
+        if data.Count() = 0
+            scene2.empty = "true"
+        else
+            while data.Count() > 0
+                myData = data.pop()
+                newNode = row1.CreateChild("MessageData") 'Create a MessageData child node
+                newNode.title = myData.Title 'Set child node's data
+                newNode.Description = myData.Description
+                newNode.MessageNum = myData.Message_Number
+                newNode.pic = m.top.picURL 'Ultimately set in Archive.brs
+                'Set dimensions
+                newNode.width = 200
+                newNode.height = 400
+                'End Widths
+            end while
+            scene2.vidObject = toReturn
+        end if
+    else
+        scene2.empty = "true"
     end if
 
     while(true)
@@ -38,6 +48,7 @@ sub showList()
     end while
 end sub
 
+'Gets objects from the API
 function getList() as object
     request = CreateObject("roUrlTransfer")
     print "Printing " + m.top.seriesID.ToStr()

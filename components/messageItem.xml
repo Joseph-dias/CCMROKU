@@ -10,11 +10,11 @@
     <LayoutGroup itemSpacings="10" vertAlignment="top" layoutDirection="vert">
         <LayoutGroup itemSpacings="0" layoutDirection="horiz" horizAlignment="center">
             <!-- This label will display the title -->
-            <Label id="infoLBL" text="Text Goes Here" width="400" height="100" font="font:SmallSystemFont" wrap="true" />
+            <Label id="infoLBL" text="Text Goes Here" font="font:SmallSystemFont" wrap="true" />
         </LayoutGroup>
         <!-- This is the picture to show above the title -->
-        <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" width="400" height="300" loadDisplayMode="scaleToFit" />
-        <Label id="descLBL" text="Text Goes Here" width="400" height="200" font="font:SmallSystemFont" wrap="true" />
+        <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" loadDisplayMode="scaleToFit" />
+        <Label id="descLBL" text="Text Goes Here" font="font:SmallSystemFont" wrap="true" />
     </LayoutGroup>
 </children>
 
