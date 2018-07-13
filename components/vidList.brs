@@ -28,6 +28,10 @@ sub showList()
                 newNode.Description = myData.Description
                 newNode.MessageNum = myData.Message_Number
                 newNode.pic = m.top.picURL 'Ultimately set in Archive.brs
+                'Set dimensions
+                newNode.width = 200
+                newNode.height = 400
+                'End Widths
             end while
             scene2.vidObject = toReturn
         end if

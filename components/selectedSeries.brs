@@ -25,9 +25,13 @@ end sub
 sub onNewFocus()
     print "Focused at: " + Str(m.data.rowItemFocused[1])
     if m.lastFocus <> -1
-        m.data.content.getChild(0).getChild(m.lastFocus).NewWidth = 200
+        lastNode = m.data.content.getChild(0).getChild(m.lastFocus)
+        lastNode.width = 200
+        lastNode.height = 400
     end if
-    m.data.content.getChild(0).getChild(m.data.rowItemFocused[1]).NewWidth = 400
+    currFocus = m.data.content.getChild(0).getChild(m.data.rowItemFocused[1])
+    currFocus.width = 400
+    currFocus.height = 600
     m.lastFocus = m.data.rowItemFocused[1]
 end sub
 

@@ -6,6 +6,8 @@
     <field id="title" type="string" />
     <field id="description" type="string" />
     <field id="messageNum" type="string" />
+    <field id="height" type="float" />
+    <field id="width" type="float" />
 </interface>
 
 </component>
