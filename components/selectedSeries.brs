@@ -14,7 +14,11 @@ end sub
 
 sub changeInfo()
     print "The videos were received"
-    m.data.content = m.top.vidObject
+    m.data.content = m.top.vidObject 'Set the content.  It's a ContentNode (for the row) within a ContentNode (for the whole list).
+    if m.top.count < 4 'Current display settings will not work if the teaching count is less than 4
+        m.data.focusXOffset = [0] ' No offset if the child count is less than 4
+        m.data.translation = [25, 50]
+    end if
     m.info.visible = false
     m.data.visible = true
     m.data.ObserveField("rowItemFocused", "onNewFocus")

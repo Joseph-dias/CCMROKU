@@ -6,6 +6,7 @@
 <interface>
     <!-- Display this vid object -->
     <field id="vidObject" type="node" />
+    <field id="count" type="int" />
     <field id="empty" type="string" />
 </interface>
 

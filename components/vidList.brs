@@ -21,6 +21,7 @@ sub showList()
         if data.Count() = 0
             scene2.empty = "true"
         else
+            scene2.count = data.Count()
             while data.Count() > 0
                 myData = data.pop()
                 newNode = row1.CreateChild("MessageData") 'Create a MessageData child node
