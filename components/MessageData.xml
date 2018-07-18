@@ -8,6 +8,7 @@
     <field id="messageNum" type="string" />
     <field id="height" type="float" />
     <field id="width" type="float" />
+    <field id="focused" type="boolean" />
 </interface>
 
 </component>

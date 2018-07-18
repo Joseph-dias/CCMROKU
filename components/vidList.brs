@@ -33,6 +33,8 @@ sub showList()
                 newNode.width = 200
                 newNode.height = 400
                 'End Widths
+
+                newNode.focused = false
             end while
             scene2.vidObject = toReturn
         end if
