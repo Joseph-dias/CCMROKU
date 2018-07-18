@@ -32,10 +32,12 @@ sub onNewFocus()
         lastNode = m.data.content.getChild(0).getChild(m.lastFocus)
         lastNode.width = 200
         lastNode.height = 400
+        lastNode.focused = false 'Setting focused back to false
     end if
     currFocus = m.data.content.getChild(0).getChild(m.data.rowItemFocused[1])
     currFocus.width = 400
     currFocus.height = 600
+    currFocus.focused = true 'This node is now focused
     m.lastFocus = m.data.rowItemFocused[1]
 end sub
 

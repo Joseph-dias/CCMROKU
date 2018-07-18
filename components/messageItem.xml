@@ -2,20 +2,23 @@
 
 <component name="messageItem" extends="Group">
 <interface>
+    <!-- This is a MessageData object -->
     <field id="itemContent" type="node" onChange="itemContentChanged" />
 </interface>
 <script type="text/brightscript" uri="messageItem.brs" />
 
 <children>
-    <LayoutGroup itemSpacings="10" vertAlignment="top" layoutDirection="vert">
-        <LayoutGroup itemSpacings="0" layoutDirection="horiz" horizAlignment="center">
-            <!-- This label will display the title -->
-            <Label id="infoLBL" text="Text Goes Here" font="font:SmallSystemFont" wrap="true" />
+    <Rectangle id="backgroundRec" color="#696969"> <!-- This is the background rectangle for the item -->
+        <LayoutGroup itemSpacings="10" vertAlignment="top" layoutDirection="vert">
+            <LayoutGroup itemSpacings="0" layoutDirection="horiz" horizAlignment="center">
+                <!-- This label will display the title -->
+                <Label id="infoLBL" text="Text Goes Here" font="font:SmallSystemFont" wrap="true" />
+            </LayoutGroup>
+            <!-- This is the picture to show above the title -->
+            <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" loadDisplayMode="scaleToFit" />
+            <Label id="descLBL" text="Text Goes Here" font="font:SmallSystemFont" wrap="true" />
         </LayoutGroup>
-        <!-- This is the picture to show above the title -->
-        <Poster id="seriesPic" translation="[10,10]" loadingBitmapUri="pkg:/images/ccm.bmp" loadDisplayMode="scaleToFit" />
-        <Label id="descLBL" text="Text Goes Here" font="font:SmallSystemFont" wrap="true" />
-    </LayoutGroup>
+    </Rectangle>
 </children>
 
 </component>
